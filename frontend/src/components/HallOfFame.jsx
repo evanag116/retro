@@ -1,7 +1,5 @@
-import axios from 'axios'
 import Images from './Images'
 import { useNavigate } from 'react-router-dom'
-
 
 function HallOfFame({HOF}) {
     const navigate = useNavigate()
@@ -9,7 +7,6 @@ function HallOfFame({HOF}) {
     const navigateToWinner = () => {
         navigate('/contestant')
     }
-
 
     return (
         <div className="container">
@@ -20,9 +17,7 @@ function HallOfFame({HOF}) {
                         Who will be the next retro lead?
                     </h2>
                     <button onClick={navigateToWinner} className="btn btn-lg btn-warning">
-                        {/* <a href="{% url 'contestant' %}" className="text-decoration-none text-dark"> */}
                             Press for Magic
-                        {/* </a> */}
                     </button>
                 </div>
             </div>

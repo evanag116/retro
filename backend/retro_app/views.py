@@ -14,10 +14,6 @@ hall_of_fame = []
 
 def index(request):
     print('home!')
-    
-    
-    
-    
     theIndex = open('static/index.html').read()
     return HttpResponse(theIndex)
 
@@ -37,12 +33,6 @@ def data_load(request):
     }
     
     return JsonResponse(data)
-    # return HttpResponse(request, data)
- 
-    
-#     return render(request, 'retro_app/index.html', data)
-
-
 
 def contestant(request):
     contestant_count = len(contestants_list)
