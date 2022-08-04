@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "gameshow";
+  src: url("./fonts/Gameshow.ttf") format("truetype");
+}
+
+.gameshow {
+  font-family: 'gameshow';
+}
+
+.shake1 {
+  animation: shake1 .7s linear infinite;
+  animation-play-state: running;
+}
+@keyframes shake1 {
+  0%  { transform: rotate(0deg); }
+  25%  { transform: rotate(10deg); }
+  50% { transform: rotate(0deg); }
+  75%  { transform: rotate(-10deg); }
+  100%  { transform: rotate(0deg); }
+}
+.shake2 {
+  animation: shake2 0.7s linear infinite;
+  animation-play-state: running;
+}
+@keyframes shake2 {
+  0%  { transform: rotate(0deg); }
+  25%  { transform: rotate(-10deg); }
+  50% { transform: rotate(0deg); }
+  75%  { transform: rotate(10deg); }
+  100%  { transform: rotate(0deg); }
+}
+
+#sunburst {
+  height: 420px;
+  background-image: url('../img/sunburst.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 65%;
+}
+#sunburst {
+  animation: rotate 10s linear infinite;
+  animation-play-state: running;
+}
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#showcase {
+  width: 660px;
+  height: 420px;
+}
+#winner-image {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 25%;
+  margin-top: -14%;
+}
+
+.rainbow-text {
+  background-image: repeating-linear-gradient(45deg, violet, rgb(78, 211, 255), rgb(109, 254, 109), yellow, orange, rgb(255, 96, 96), violet);
+  text-align: center;
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 56px;
+  animation: rainbow 4s linear infinite;
+  animation-play-state:running;
+}
+@keyframes rainbow { 
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 25% }
+  100% { background-position: 0% 50% }
+}
+
+.slider {
+  height:120px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+}
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, rgba(33, 37, 41, 1) 0%, rgba(33, 37, 41, 0) 100%);
+  content: "";
+  height: 120px;
+  position: absolute;
+  width: 210px;
+  z-index: 2;
+}
+.slider::after{
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
+}
+.slider .slide-track {
+  animation: scroll 10s linear infinite;
+  animation-play-state: running;
+  display: flex;
+  width: 500px;
+}
+.slider .slide {
+  height: 120px;
+  width: 210px;
+}
+.slide {
+  display: inline-block;
+}
+@keyframes scroll {
+  0% { transform: 0px; }
+  100% { margin-left: -1255px; }
+}
